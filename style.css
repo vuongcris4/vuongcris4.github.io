@@ -226,3 +226,14 @@ iframe {
     border: 0; /* Loại bỏ viền */
 }
 
+footer {
+    background-color: #004d40; /* Màu nền cho footer */
+    color: white; /* Màu chữ */
+    text-align: center; /* Căn giữa nội dung */
+    padding: 10px 0; /* Khoảng cách trên dưới cho phần footer */
+    position: fixed; /* Đảm bảo footer luôn ở cuối trang */
+    bottom: 0; /* Căn dưới của trang */
+    width: 100%; /* Chiếm toàn bộ chiều rộng của trang */
+    font-size: 14px; /* Kích thước chữ */
+}
+
