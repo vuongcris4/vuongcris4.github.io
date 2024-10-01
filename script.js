@@ -1,4 +1,17 @@
 console.log("Script loaded 1");
+// Hàm cập nhật ngày giờ
+function updateDateTime() {
+  const now = new Date();
+  const date = now.toLocaleDateString();
+  const time = now.toLocaleTimeString();
+
+  document.getElementById("date").textContent = `Date: ${date}`;
+  document.getElementById("time").textContent = `Time: ${time}`;
+}
+updateDateTime(); // Gọi lập tức rồi Interval mỗi 1s
+setInterval(updateDateTime, 1000);
+
+
 
 // Import các chức năng cần thiết từ Firebase SDK
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-app.js";
@@ -163,16 +176,3 @@ fanSwitch.addEventListener("change", () => {
     updateDeviceStatus("bedroom", "fan", false); // Cập nhật lên Firebase là quạt tắt
   }
 });
-
-// Hàm cập nhật ngày giờ
-function updateDateTime() {
-  const now = new Date();
-  const date = now.toLocaleDateString();
-  const time = now.toLocaleTimeString();
-
-  document.getElementById("date").textContent = `Date: ${date}`;
-  document.getElementById("time").textContent = `Time: ${time}`;
-}
-
-// Cập nhật mỗi giây
-setInterval(updateDateTime, 1000);
