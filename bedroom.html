@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phòng ngủ</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <header>
+        <a href="index.html"><img src="/images/home.png" title="Home Icon" alt="Home" class="home-icon" /></a>
+        <h1>SmartHome - Bedroom</h1>
+        <div class="date-time">
+            <p id="date"></p>
+            <p id="time"></p>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li id="selected"><a href="bedroom.html">Bedroom</a></li>
+            <li><a href="#">Livingroom</a></li>
+            <li><a href="#">Kitchen</a></li>
+            <li><a href="#">Bathroom</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+
+        <div class="dashboard">
+            <div class="card">
+                <h2>Temperature</h2>
+                <p id="temperature">Loading...</p>
+                <img id="tempImage" alt="Temperature" />
+            </div>
+
+            <div class="card">
+                <h2>Light</h2>
+                <p id="light">Loading...</p>
+                <img id="lightImage" alt="Light" />
+            </div>
+
+            <div class="card">
+                <h2>Presence</h2>
+                <p id="presence">Loading...</p>
+                <img id="presenceImage" alt="Presence" />
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Phần điều khiển thiết bị (nằm ngang) -->
+    <div class="controls-horizontal">
+        <!-- Điều khiển điều hòa -->
+        <div class="switch-device">
+            <img src="/images/ac_off.png" id="acImage" alt="AC Image">
+            <div class="switch">
+                <label for="acSwitch">Air Conditioner</label>
+                <label class="switch-toggle">
+                    <input type="checkbox" id="acSwitch">
+                    <span class="slider"></span>
+                </label>
+            </div>
+        </div>
+
+        <!-- Điều khiển đèn -->
+        <div class="switch-device">
+            <img src="/images/light_off.png" id="lightDeviceImage" alt="Light Image">
+            <div class="switch">
+                <label for="lightSwitch">Light</label>
+                <label class="switch-toggle">
+                    <input type="checkbox" id="lightSwitch">
+                    <span class="slider"></span>
+                </label>
+            </div>
+        </div>
+
+        <!-- Điều khiển quạt -->
+        <div class="switch-device">
+            <img src="/images/fan_off.png" id="fanImage" alt="Fan Image">
+            <div class="switch">
+                <label for="fanSwitch">Fan</label>
+                <label class="switch-toggle">
+                    <input type="checkbox" id="fanSwitch">
+                    <span class="slider"></span>
+                </label>
+            </div>
+            
+        </div>
+        
+    </div>
+
+
+    <script type="module" type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script type="module" type="text/javascript" src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns"></script>
+    <script type="module" src="fakeData.js"></script>
+    <script type="module" src="script.js"></script>
+
+
+</body>
+
+</html>
