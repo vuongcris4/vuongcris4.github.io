@@ -4,15 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tổng quan Smart Home</title>
+    <title>Phòng ngủ</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
     <header>
-        <a href="index.html"><img src="/images/home.png" title="Home Icon" alt="Home" class="home-icon" /></a>
-        <h1>SmartHome</h1>
+        <a href="home.html"><img src="/images/home.png" title="Home Icon" alt="Home" class="home-icon" /></a>
+        <h1>SmartHome - Bedroom</h1>
         <div class="date-time">
             <p id="date"></p>
             <p id="time"></p>
@@ -21,41 +21,85 @@
 
     <nav>
         <ul>
-            <li><a href="bedroom.html">Bedroom</a></li>
-            <li><a href="#">Livingroom</a></li>
-            <li><a href="#">Kitchen</a></li>
-            <li><a href="#">Bathroom</a></li>
+            <li id="bedroom"><a href="#">Bedroom</a></li>
+            <li id="livingroom"><a href="#">Livingroom</a></li>
+            <li id="kitchen"><a href="#">Kitchen</a></li>
+            <li id="bathroom"><a href="#">Bathroom</a></li>
         </ul>
     </nav>
 
-    <!-- 
-    <div class="container">
+    <div class="dashboard">
+        <div class="card">
+            <h2>Temperature</h2>
+            <p id="temperature">Loading...</p>
+            <img id="tempImage" alt="Temperature" />
+        </div>
 
-        <div class="charts">
-            <div class="chart-wrapper">
-                <h2>Temperature Chart</h2>
-                <canvas id="temperatureChart"></canvas>
-            </div>
-            <div class="chart-wrapper">
-                <h2>Humidity Chart</h2>
-                <canvas id="humidityChart"></canvas>
-            </div>
-            <div class="chart-wrapper">
-                <h2>Light Chart</h2>
-                <canvas id="lightChart"></canvas>
+        <div class="card">
+            <h2>Light</h2>
+            <p id="light">Loading...</p>
+            <img id="lightImage" alt="Light" />
+        </div>
+
+        <div class="card">
+            <h2>Presence</h2>
+            <p id="presence">Loading...</p>
+            <img id="presenceImage" alt="Presence" />
+        </div>
+    </div>
+
+
+    <div class="controls-horizontal">
+        <!-- Điều khiển điều hòa -->
+        <div class="switch-device">
+            <img src="/images/ac_off.png" id="acImage" alt="AC Image">
+            <div class="switch">
+                <label for="acSwitch">Air Conditioner</label>
+                <label class="switch-toggle">
+                    <input type="checkbox" id="acSwitch">
+                    <span class="slider"></span>
+                </label>
             </div>
         </div>
-    </div> -->
 
-    <div style="margin: 20px; font-size: 20px;">
-        Chưa làm phần đồ thị thống kê theo ngày, tuần, tháng (như app weather)
+        <!-- Điều khiển đèn -->
+        <div class="switch-device">
+            <img src="/images/light_off.png" id="lightDeviceImage" alt="Light Image">
+            <div class="switch">
+                <label for="lightSwitch">Light</label>
+                <label class="switch-toggle">
+                    <input type="checkbox" id="lightSwitch">
+                    <span class="slider"></span>
+                </label>
+            </div>
+        </div>
+
+        <!-- Điều khiển quạt -->
+        <div class="switch-device">
+            <img src="/images/fan_off.png" id="fanImage" alt="Fan Image">
+            <div class="switch">
+                <label for="fanSwitch">Fan</label>
+                <label class="switch-toggle">
+                    <input type="checkbox" id="fanSwitch">
+                    <span class="slider"></span>
+                </label>
+            </div>
+
+        </div>
+
     </div>
 
     <footer>
-        Môn: TT Kiến trúc Giao thức IoT, GGHV: Trương Quang Phúc, Nhóm: Lê Thành Ngân, Trần Duy Vương
+        Môn: TT Kiến trúc Giao thức IoT, GVHD: Trương Quang Phúc, Nhóm: Lê Thành Ngân, Trần Duy Vương
     </footer>
 
+
+    <script type="module" type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script type="module" type="text/javascript" src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns"></script>
+    <script type="module" src="fakeData.js"></script>
     <script type="module" src="script.js"></script>
+
+
 </body>
 
 </html>
